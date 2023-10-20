@@ -19,6 +19,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axiosInstance from "../axios/axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button } from "react-bootstrap";
 function AdminLogg() {
   const {
     userDecode,
@@ -74,6 +75,7 @@ function AdminLogg() {
         style={{
           backgroundImage:
             "url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp)",
+          paddingTop: "30px",
         }}
       >
         <div className="mask gradient-custom-3"></div>
@@ -107,13 +109,13 @@ function AdminLogg() {
                 label="I agree all statements in Terms of service"
               />
             </div>
-            <MDBBtn
+            <Button
               onClick={handleLoginSubmit}
               className="mb-4 w-100 gradient-custom-4"
               size="lg"
             >
               Login
-            </MDBBtn>
+            </Button>
             <ToastContainer />
           </MDBCardBody>
         </MDBCard>
