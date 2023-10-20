@@ -1,0 +1,15 @@
+/* Define the square container */
+.square-image-container {
+    width: 200px; /* Set the desired width for the square container */
+    height: 200px; /* Set the desired height for the square container */
+    overflow: hidden; /* Hide any overflow content (for larger images) */
+    position: relative; /* Position for absolute elements inside the container */
+  }
+  
+  /* Style the image within the square container */
+  .square-image {
+    width: 100%; /* Make the image fill the entire container width */
+    height: 100%; /* Maintain the aspect ratio by setting height to 100% */
+    object-fit: cover; /* Crop the image to fit within the container while maintaining aspect ratio */
+  }
+  
