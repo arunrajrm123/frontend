@@ -44,6 +44,7 @@ export default function Dashboard() {
     });
     navigate("/appstatus");
   };
+
   const handleUpload = () => {
     if (imageupload == null) return;
     const imageRef = ref(storage, `images/${imageupload.name + v4()}`);
@@ -172,13 +173,13 @@ export default function Dashboard() {
                     alignItems: "center",
                   }}
                 >
-                  <button
+                  {/* <button
                     onClick={() => handleapp()}
                     type="button"
                     class="btn btn-sm btn-primary"
                   >
                     Button
-                  </button>
+                  </button> */}
 
                   <Button
                     onClick={() => handleapp()}
@@ -187,7 +188,6 @@ export default function Dashboard() {
                       marginTop: "1rem",
                       backgroundColor: "white",
                     }}
-                    className="btn btn-sm"
                   >
                     My Appointments
                   </Button>

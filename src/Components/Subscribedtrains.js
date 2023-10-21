@@ -41,15 +41,14 @@ export default function Subscribedtrains() {
     console.log(data);
     axiosInstance.post("review/", data).then((res) => {
       console.log(res.data);
+      alert("succesfully added");
     });
   };
 
   const handleCloseModal = () => {
     setSelectedVideo(null);
   };
-  const handlereview = () => {
-
-  };
+  const handlereview = () => {};
 
   const handleUpload = () => {
     if (imageupload == null) return;
@@ -144,14 +143,14 @@ export default function Subscribedtrains() {
               </Form.Group>
 
               <Form.Group controlId="categorySelect">
-                <Form.Label>Select Category</Form.Label>
+                <Form.Label>Rating</Form.Label>
                 <Form.Control
                   as="select"
                   name="selectedCategory"
                   value={rating}
                   onChange={(e) => setRating(parseInt(e.target.value))}
                 >
-                  <option value="">Select a course</option>
+                  <option value="">Select rating</option>
                   {numbers.map((category) => (
                     <option key={category} value={category}>
                       {category}
@@ -181,7 +180,7 @@ export default function Subscribedtrains() {
       <div
         className="col-md-9 col-lg-10 text-center d-flex align-items-center justify-content-center py-5"
         style={{ paddingLeft: "180px" }}
-       >
+      >
         <Paper elevation={3} sx={{ padding: "1rem", paddingRight: "1rem" }}>
           <Table responsive hover>
             {

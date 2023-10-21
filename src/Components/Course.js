@@ -203,7 +203,7 @@ function Courses() {
                       <select>
                         <option value="">Select a course</option>
                         {categories.map((category) => (
-                          <option key={category.id} value={category.id}>
+                          <option key={category.id} value={category.name}>
                             {category.name}
                           </option>
                         ))}

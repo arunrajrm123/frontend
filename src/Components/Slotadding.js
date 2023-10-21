@@ -25,7 +25,7 @@ function SlotAdder() {
       };
       axiosInstance.post("slot/", data).then((res) => {
         console.log(res.data);
-        alert("Time slot added successfully");
+        alert(res.data.message);
       });
       // Add the slot to the list
       setTimeSlots([...timeSlots, slot]);
