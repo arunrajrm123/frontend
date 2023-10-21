@@ -199,6 +199,7 @@ function Courses() {
                     >
                       <select>
                         <option value="">Select a catogery</option>
+                        {console.log(categorie)}
                         {categorie.map((category) => (
                           <option key={category.id} value={category.name}>
                             {category.name}
