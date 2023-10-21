@@ -21,6 +21,7 @@ function Courses() {
   const [values, setValue] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [categorie, setCategorie] = useState([]);
   const {
     userDecode,
     setUserDecode,
@@ -89,6 +90,9 @@ function Courses() {
     });
     axiosInstance.post("allcato/").then((res) => {
       setCategories(res.data);
+      axiosInstance.get("fullcatogery/").then((res) => {
+        setCategorie[res.data];
+      });
     });
   }, []);
   return (
@@ -193,7 +197,7 @@ function Courses() {
                     >
                       <select>
                         <option value="">Select a catogery</option>
-                        {categories.map((category) => (
+                        {categorie.map((category) => (
                           <option key={category.id} value={category.name}>
                             {category.name}
                           </option>
