@@ -59,6 +59,7 @@ function Courses() {
       name: user.value.name,
       catogery: user.value.catogery,
     };
+    console.log(data);
     axiosInstance.post("addcourse/", data).then((res) => {
       console.log("this is respose", res.data);
       if (res.data.message) {
@@ -199,12 +200,14 @@ function Courses() {
                       value={user.value.course}
                       onChange={(e) => dispatch(changeCatogery(e.target.value))}
                     >
-                      <option value="">Select a course</option>
-                      {categories.map((category) => (
-                        <option key={category.id} value={category.name}>
-                          {category.name}
-                        </option>
-                      ))}
+                      <select>
+                        <option value="">Select a course</option>
+                        {categories.map((category) => (
+                          <option key={category.id} value={category.id}>
+                            {category.name}
+                          </option>
+                        ))}
+                      </select>
                     </Form.Control>
                   </Form.Group>
 

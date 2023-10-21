@@ -115,10 +115,16 @@ function App() {
               <Route path="/specifictriner" element={<UserTrainerView />} />
               <Route path="/videoupload" element={<TrainerVideoupload />} />
               <Route path="/admincato" element={<Admincatogery />} />
-              {<Route path="/adminlogin" element={<AdminLogg />} />}
-              {<Route path="/adminhome" element={<AdminHome />} />}
+              {!adminaccessToken && (
+                <Route path="/adminlogin" element={<AdminLogg />} />
+              )}
+              {adminaccessToken && (
+                <Route path="/adminhome" element={<AdminHome />} />
+              )}
               {<Route path="/login" element={<Loginuser />} />}
-              {<Route path="/trainerdash" element={<TrainerDashboard />} />}
+              {traineraccesstoken && (
+                <Route path="/trainerdash" element={<TrainerDashboard />} />
+              )}
               {<Route path="/cato" element={<Category />} />}
               {<Route path="/course" element={<Courses />} />}
               {<Route path="/email" element={<Email />} />}
@@ -127,7 +133,7 @@ function App() {
               {<Route path="/trainersignup" element={<Trainersignup />} />}
               {<Route path="/trainerlogin" element={<Trainerlogin />} />}
               {<Route path="/trainerdetails" element={<Admintrainer />} />}
-              {<Route path="/dash" element={<Dashboard />} />}
+              {accessToken && <Route path="/dash" element={<Dashboard />} />}
             </Routes>
           </Authcontext.Provider>
         </PayPalScriptProvider>

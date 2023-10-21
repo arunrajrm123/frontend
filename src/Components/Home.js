@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import BasicExample from "./Nav";
@@ -7,7 +7,7 @@ import axiosInstance from "../axios/axios";
 import { useState } from "react";
 const Home = () => {
   const navigate = useNavigate();
-  const catodetails = JSON.parse(localStorage.getItem("catodetails")) || [];
+  const [catodetails, setCatos] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const handleCategory = (cato) => {
@@ -22,6 +22,12 @@ const Home = () => {
       navigate("/specificcourse");
     });
   };
+  useEffect(() => {
+    axiosInstance.get("fullcatogery/").then((res) => {
+      console.log(res.data);
+      setCatos(res.data);
+    });
+  });
 
   return (
     <div className="home-container">
