@@ -197,15 +197,13 @@ function Courses() {
                       value={user.value.course}
                       onChange={(e) => dispatch(changeCatogery(e.target.value))}
                     >
-                      <select>
-                        <option value="">Select a catogery</option>
-                        {console.log(categorie)}
-                        {categorie.map((category) => (
-                          <option key={category.id} value={category.name}>
-                            {category.name}
-                          </option>
-                        ))}
-                      </select>
+                      <option value="">Select a category</option>
+                      {console.log(categorie)}
+                      {categorie.map((catego) => (
+                        <option key={catego.id} value={catego.name}>
+                          {catego.name}
+                        </option>
+                      ))}
                     </Form.Control>
                   </Form.Group>
 
