@@ -65,16 +65,7 @@ function Courses() {
       if (res.data.message) {
         toast.error(res.data.message);
       } else {
-        const s = localStorage.setItem(
-          "coursedetails",
-          JSON.stringify(res.data.allcourse)
-        );
-        const storedDetails = localStorage.getItem("coursedetails");
-        console.log("thi is s", s);
-        if (storedDetails) {
-          const parsedData = JSON.parse(storedDetails);
-          setCatodetails(parsedData);
-        }
+        setCatodetails(res.data);
       }
 
       const Det = localStorage.getItem("catodetails");
@@ -201,7 +192,7 @@ function Courses() {
                       onChange={(e) => dispatch(changeCatogery(e.target.value))}
                     >
                       <select>
-                        <option value="">Select a course</option>
+                        <option value="">Select a catogery</option>
                         {categories.map((category) => (
                           <option key={category.id} value={category.name}>
                             {category.name}
