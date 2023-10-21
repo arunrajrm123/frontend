@@ -37,6 +37,7 @@ function Courses() {
 
     navigate("/adminlogin");
   };
+
   const handleview = (id) => {
     const data = {
       id: id,
@@ -91,7 +92,8 @@ function Courses() {
     axiosInstance.post("allcato/").then((res) => {
       setCategories(res.data);
       axiosInstance.get("fullcatogery/").then((res) => {
-        setCategorie[res.data];
+        setCategorie(res.data);
+        console.log(res.data);
       });
     });
   }, []);
