@@ -26,7 +26,7 @@ const Home = () => {
     axiosInstance.get("fullcatogery/").then((res) => {
       console.log(res.data);
       setCatos(res.data);
-    });
+    }, []);
   });
 
   return (
